@@ -31,6 +31,8 @@
 
 <!-- Changed all the non title h1 tags to h3 tags as per SEO best practices   -->
     <main class="center" id="main">
+        <div class="page-area">
+
             <article>
                 <h3>Stay on track</h3>
                 <p>
@@ -71,31 +73,16 @@
                     app will help you with that!
                 </p>
             </article>
-    
-            <article>
-                <h3>Alerts</h3>
-                <p>
-                    What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.
-                </p>
-            </article>
-    
-            <article>
-                <h3>Results</h3>
-                <p>
-                    People who stick to a financial plan, budgeting every expense, get out of debt faster!
-                    Also, they to live happier lives... since they expend without guilt or fear... 
-                    because they know it is all good and accounted for.
-                </p>
-            </article>
-
+        </div>
+        <div class="page-area">
             <article>
                
-                <h3>Pie View</h3>
+                <h3>Expense Chart</h3>
                 <p>
                     <canvas id="myPieChart" width="400" height="400"></canvas>
                 </p>
             </article>
-        
+        </div>
 
     </main>
 
@@ -127,12 +114,6 @@ function createChart() {
 var ctx = document.getElementById('myPieChart').getContext('2d');
 var myPieChart = new Chart(ctx, {
     type: 'pie',
-    data: dataSource
-});
-
-var btx = document.getElementById('myBubbleChart').getContext('2d');
-var myBubbleChart = new Chart(btx, {
-    type: 'bubble',
     data: dataSource
 });
 }

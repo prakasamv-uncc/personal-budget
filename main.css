@@ -63,6 +63,11 @@ div.hero h2 {
     color: #4d5791;
 }
 
+.page-area {
+    display: flex;
+    flex-direction: row;
+}
+
 main {
     padding: 40px;
     width: 100%;
