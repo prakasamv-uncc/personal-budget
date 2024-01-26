@@ -21,6 +21,34 @@ const budget = {
             title: 'Grocery',
             budget: 110
         },
+        {
+            title: 'Car',
+            budget: 100
+        },
+        {
+            title: 'Utilities',
+            budget: 90
+        },
+        {
+            title: 'Internet',
+            budget: 50
+        },
+        {
+            title: 'Phone',
+            budget: 50
+        },
+        {
+            title: 'Gas',
+            budget: 40
+        },
+        {
+            title: 'Insurance',
+            budget: 100
+        },
+        {
+            title: 'Misc',
+            budget: 100
+        }
     ]
 };
 
@@ -30,5 +58,5 @@ app.get('/budget', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`API served at http://localhost:${port}`);
+    console.log(`API served at http://137.184.110.255:${port}`);
 });

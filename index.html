@@ -10,29 +10,32 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
+    <header class="page-header">
+        <a href="#main" class="skip">Skip to content</a>
 
-<a href="#main" class="skip">Skip to content</a>
+        <nav aria-label="navigation">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/login.html">Login</a></li>
+                <li><a href="https://google.com">Google</a></li>
+            </ul>
+        </nav>
+            <!-- Adding Tab index to bring the for screen reader visibility  -->
+    
+        <div class="hero" tabindex="0">
+            <h1>Personal Budget</h1>
+            <h2>A personal-budget management app</h2>
+        </div>
+    </header>
 
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/login.html">Login</a></li>
-            <li><a href="https://google.com">Google</a></li>
-        </ul>
-    </nav>
-
-    <div class="hero">
-        <h1>Personal Budget</h1>
-        <h2>A personal-budget management app</h2>
-    </div>
-
+<!-- Changed all the non title h1 tags to h3 tags as per SEO best practices   -->
     <main class="center" id="main">
-
-        <div class="page-area">
-
+        <!-- Adding Tab index to bring the for screen reader visibility  -->
+       <!--  <div class="page-area" tabindex="0">
+ -->
             <article>
-                <h1>Stay on track</h1>
+                <h3>Stay on track</h3>
                 <p>
                     Do you know where you are spending your money? If you really stop to track it down,
                     you would get surprised! Proper budget management depends on real data... and this
@@ -41,14 +44,14 @@
             </article>
     
             <article>
-                <h1>Alerts</h1>
+                <h3>Alerts</h3>
                 <p>
                     What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.
                 </p>
             </article>
     
             <article>
-                <h1>Results</h1>
+                <h3>Results</h3>
                 <p>
                     People who stick to a financial plan, budgeting every expense, get out of debt faster!
                     Also, they to live happier lives... since they expend without guilt or fear... 
@@ -57,14 +60,14 @@
             </article>
     
             <article>
-                <h1>Free</h1>
+                <h3>Free</h3>
                 <p>
                     This app is free!!! And you are the only one holding your data!
                 </p>
             </article>
     
             <article>
-                <h1>Stay on track</h1>
+                <h3>Stay on track</h3>
                 <p>
                     Do you know where you are spending your money? If you really stop to track it down,
                     you would get surprised! Proper budget management depends on real data... and this
@@ -73,29 +76,38 @@
             </article>
     
             <article>
-                <h1>Alerts</h1>
+                <h3>Alerts</h3>
                 <p>
                     What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.
                 </p>
             </article>
     
             <article>
-                <h1>Results</h1>
+                <h3>Results</h3>
                 <p>
                     People who stick to a financial plan, budgeting every expense, get out of debt faster!
                     Also, they to live happier lives... since they expend without guilt or fear... 
                     because they know it is all good and accounted for.
                 </p>
             </article>
-    
+
             <article>
-                <h1>Chart</h1>
+                <section>
+                    <h3>Pie View</h3>
+                    <p>
+                        <canvas id="myPieChart" width="400" height="400"></canvas>
+                    </p>
+                </section>
+                
+                <section>
+                    <h3>Bubble View</h3>
                 <p>
-                    <canvas id="myChart" width="400" height="400"></canvas>
-                </p>
+                    <canvas id="myBubbleChart" width="400" height="400"></canvas>
+                </p></section>
             </article>
 
-        </div>
+     <!--    </div> -->
+        
 
     </main>
 
@@ -107,44 +119,53 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
-
     <script>
-        var dataSource = {
-                datasets: [
-                    {
-                        data: [],
-                        backgroundColor: [
-                            '#ffcd56',
-                            '#ff6384',
-                            '#36a2eb',
-                            '#fd6b19',
-                        ]
-                    }
-                ],
-                labels: []
-            };
-
-        function createChart() {
-            var ctx = document.getElementById('myChart').getContext('2d');
-            var myPieChart = new Chart(ctx, {
-                type: 'pie',
-                data: dataSource
-            });
+    var dataSource = {
+    datasets: [
+        {
+            data: [],
+            backgroundColor: [
+                '#ffcd56',
+                '#ff6384',
+                '#36a2eb',
+                '#fd6b19',
+                '#19abfd',
+                '#19fd6b',
+                '#fddd19',
+                '#39fd19',
+                '#8b8b8b',
+            ]
         }
+    ],
+    labels: []
+};
 
-        function getBudget() {
-            axios.get('http://localhost:3000/budget')
-            .then(function (res) {
-                for (var i = 0; i < res.data.myBudget.length; i++) {
-                    dataSource.datasets[0].data[i] = res.data.myBudget[i].budget;
-                    dataSource.labels[i] = res.data.myBudget[i].title;
-                    createChart();
-                }
-            });
-        }
+function createChart() {
+var ctx = document.getElementById('myChart').getContext('2d');
+var myPieChart = new Chart(ctx, {
+    type: 'pie',
+    data: dataSource
+});
 
-        getBudget();
+var btx = document.getElementById('myBubbleChart').getContext('2d');
+var myBubbleChart = new Chart(btx, {
+    type: 'bubble',
+    data: dataSource
+});
+}
+
+function getBudget() {
+axios.get('http://137.184.110.255:3000/budget')
+.then(function (res) {
+    for (var i = 0; i < res.data.myBudget.length; i++) {
+        dataSource.datasets[0].data[i] = res.data.myBudget[i].budget;
+        dataSource.labels[i] = res.data.myBudget[i].title;
+        createChart();
+    }
+});
+}
+
+    getBudget();
     </script>
-
 </body>
 </html>
