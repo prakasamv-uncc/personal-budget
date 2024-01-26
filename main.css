@@ -105,6 +105,8 @@ main article {
 @media screen and (min-width: 768px) {
     main article {
         margin: 10px;
+    }
+    .page-area {
         flex-direction: column
     }
 }
