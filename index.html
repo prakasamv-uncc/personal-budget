@@ -95,14 +95,14 @@
                 <section>
                     <h3>Pie View</h3>
                     <p>
-                        <canvas id="myPieChart" width="400" height="400"></canvas>
+                        <canvas id="myPieChart" width="40%" height="400"></canvas>
                     </p>
                 </section>
                 
                 <section>
                     <h3>Bubble View</h3>
                 <p>
-                    <canvas id="myBubbleChart" width="400" height="400"></canvas>
+                    <canvas id="myBubbleChart" width="40%" height="400"></canvas>
                 </p></section>
             </article>
 
@@ -113,7 +113,7 @@
 
     <footer class="bottom">
         <div class="center">
-            All rights reserved &copy; Fabio Nolasco
+            All rights reserved &copy; Prakasam Venkatachalam
         </div>
     </footer>
 
@@ -141,7 +141,7 @@
 };
 
 function createChart() {
-var ctx = document.getElementById('myChart').getContext('2d');
+var ctx = document.getElementById('myPieChart').getContext('2d');
 var myPieChart = new Chart(ctx, {
     type: 'pie',
     data: dataSource
