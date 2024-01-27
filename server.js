@@ -15,7 +15,7 @@ const budget = {
         },
         {
             title: 'Rent',
-            budget: 275
+            budget: 75
         },
         {
             title: 'Grocery',
@@ -43,7 +43,6 @@ const budget = {
         }  
     ]
 };
-
 
 app.get('/budget', (req, res) => {
     res.json(budget);
