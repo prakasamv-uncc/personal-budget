@@ -137,6 +137,71 @@ polyline{
 	fill: none;
 }
 
+
+toggle {
+    display: inline-block;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+            padding: 10px!important;
+
+  }
+  
+  .toggle-switch {
+    background: #ccc;
+    width: 80px;
+    height: 30px;
+    overflow: hidden;
+    border-radius: 3px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
+  .toggle-switch:after {
+    content: " ";
+    display: block;
+    width: 40px;
+    height: 30px;
+    background-color: #3498DB;
+    border: 3px solid #fff;
+    border-top: 0;
+    border-bottom: 0;
+    margin-left: -3px;
+    transition: all 0.1s ease-in-out;
+  }
+  
+  .active .toggle-switch:after {
+    margin-left: 40px;
+  }
+  
+  .toggle-label {
+    display: inline-block;
+    line-height: 30px;
+    color: grey; /* default color for toggle-label */
+  }
+  
+  .active .toggle-label {
+    color: #3498DB;
+  }
+
+  .active-state{
+    display: inline-block;
+  }
+
+    .inactive-state{
+        display: none;
+    }
+
+
+    .chart-bg{
+        background-color: aliceblue!important;
+        padding: 25px 0;
+    }
+  
+
 @media screen and (max-width: 768px) {
     nav ul,
     nav ul li {
