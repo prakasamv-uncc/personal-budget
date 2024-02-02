@@ -257,29 +257,7 @@
 
       getBudget();
 
-      /* On document load fetching element */
-      document.addEventListener("DOMContentLoaded", () => {
-        const toggleSwitch = document.querySelector(".toggle-switch");
-        var defaultView = "d3-js";
-
-        /*  Handler to switch the toggle and view*/
-        function toggleHandler(event) {
-          event.preventDefault();
-          console.log(event.currentTarget.parentElement);
-          event.currentTarget.parentElement.classList.toggle("active");
-          if (defaultView === "d3-js") {
-            defaultView = "chart-js";
-            document.querySelector(".chart-js").style.display = "block";
-            document.querySelector(".d3-js").style.display = "none";
-          } else {
-            defaultView = "d3-js";
-            document.querySelector(".chart-js").style.display = "none";
-            document.querySelector(".d3-js").style.display = "block";
-          }
-        }
-        // Event listener for the toggle switch
-        toggleSwitch.addEventListener("click", toggleHandler);
-      });
+     
 
 
       toggleChart = (value) => {
