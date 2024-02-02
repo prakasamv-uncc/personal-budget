@@ -84,12 +84,21 @@
 
       <!--Semantic HTML TAG Added Section tag as part of semantic html tag -->
       <!-- A11y- Accessibility, Added tabindex for Accessability tab navigation -->
-      <section tabindex="0" aria-label="Budget donut charts" class="charts banner">
-        <div aria-label="toggle" class="toggle">
-         <h3> <div class="toggle-label active">Budget View : D3 Chart</div>
-          <div class="toggle-switch"></div>
-          <div class="toggle-label">Chart JS</div></h3>
-        </div>
+      <div tabindex="0" aria-label="Budget donut charts" class="charts banner">
+    
+            <div class="switches-container">
+              <input type="radio" id="switchMonthly" name="switchPlan" value="D3.js Chat" checked="checked" onclick="toggleChart(value)" />
+              <input type="radio" id="switchYearly" name="switchPlan" value="Chart.js" onclick="toggleChart(value)"/>
+              <label for="switchMonthly">D3.js Chat</label>
+              <label for="switchYearly">Chart.js </label>
+              <div class="switch-wrapper">
+                <div class="switch">
+                  <div>D3.js Chat</div>
+                  <div>Chart.js</div>
+                </div>
+              </div>
+            </div>
+         <!--    </se> -->
           <article tabindex="0" class="chart-js inactive-state  chart-bg">
             <!-- <h3>Expense Chart JS</h3> -->
             <p>
@@ -107,7 +116,7 @@
         
 
        
-      </section>
+        </div>
     </main>
 
     <footer class="bottom">
@@ -271,6 +280,17 @@
         // Event listener for the toggle switch
         toggleSwitch.addEventListener("click", toggleHandler);
       });
+
+
+      toggleChart = (value) => {
+        if (value === "D3.js Chat") {
+          document.querySelector(".chart-js").style.display = "none";
+          document.querySelector(".d3-js").style.display = "block";
+        } else {
+          document.querySelector(".chart-js").style.display = "block";
+          document.querySelector(".d3-js").style.display = "none";
+        }
+      };
     </script>
   </body>
 </html>
