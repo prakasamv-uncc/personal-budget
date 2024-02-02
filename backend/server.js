@@ -8,7 +8,7 @@ const app = express();
 const port = 3001;
 
 app.use(cors());
-
+/* Loading JSON from file using file system  */
  const budget = JSON.parse(fs.readFileSync(`${__dirname}/budget.json`, 'utf8'));
 
 app.get('/budget', (req, res) => {

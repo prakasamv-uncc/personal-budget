@@ -1,5 +1,17 @@
 # Info
 
+# To Run 
+Moved Server related files into backend 
+To start navigate to backend folder execute 
+ $backend > node ./server.js 
+
+# Local run index.html in server mode 
+Right click on index.html  and select "Open up with Live Server"
+
+# CHART
+Added a toggle switch to navigate between Chart.js and D3.JS donut chart.
+
+
 # SEO Changes 
 Updated code with SEO changes with better description and keywords.
 a. Updated proper description 
