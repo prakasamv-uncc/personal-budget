@@ -217,8 +217,7 @@ p {
     background: var(--switches-bg-color);
     line-height: 3rem;
     border-radius: 3rem;
-  /*   margin-left: auto;
-    margin-right: auto; */
+ 
 }
 
 /* input (radio) for toggling. hidden - use labels for clicking on */
