@@ -180,6 +180,7 @@
           for ( var j=0; j < res.data.length; j++ ) {
             for (var i = 0; i < res.data[j].myBudget.length; i++) {
             dataSource.datasets[0].data[i] = res.data[j].myBudget[i].budget;
+            dataSource.datasets[0].backgroundColor[i] = res.data[j].myBudget[i].color;
             dataSource.labels[i] = res.data[j].myBudget[i].title;
           }
           }
