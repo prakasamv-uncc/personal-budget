@@ -177,12 +177,15 @@
       function getBudget() {
         // axios.get('http://137.184.110.255:3000/budget')
         axios.get("http://localhost:3001/budget").then(function (res) {
-          for (var i = 0; i < res.data.myBudget.length; i++) {
-            dataSource.datasets[0].data[i] = res.data.myBudget[i].budget;
-            dataSource.labels[i] = res.data.myBudget[i].title;
+          for ( var j=0; j < res.data.length; j++ ) {
+            for (var i = 0; i < res.data[j].myBudget.length; i++) {
+            dataSource.datasets[0].data[i] = res.data[j].myBudget[i].budget;
+            dataSource.labels[i] = res.data[j].myBudget[i].title;
           }
+          }
+          
           createChart();
-          createD3Chart(res.data.myBudget);
+          createD3Chart(res.data[0].myBudget);
         });
       }
 
